@@ -2,5 +2,4 @@
 .idea/
 .vscode/
 *.pyc
-**/__pycache__/
-sort/__pycache__/
+*/__pycache__
