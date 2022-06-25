@@ -1,0 +1,6 @@
+.venv/
+.idea/
+.vscode/
+*.pyc
+**/__pycache__/
+sort/__pycache__/
