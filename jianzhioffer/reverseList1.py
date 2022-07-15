@@ -1,3 +1,9 @@
+import os, sys
+
+# 导入上级同级目录文件
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+
 from public import separatedList
 
 
@@ -6,6 +12,7 @@ class ListNode:
     def __init__(self, x):
         self.val = x
         self.next = None
+
 
 class Solution:
     def reverseList1(self, head: ListNode) -> ListNode:
@@ -48,13 +55,31 @@ class Solution:
 
         return cur
 
+    def reverseList3(self, head: ListNode) -> ListNode:
 
-if __name__ == '__main__':
-    nums = [1,2,3,4,5]
+        if not head:
+            return None
+
+        if not head.next:
+            return head
+        i, j = head, head.next
+        i.next = None
+        while j:
+            next_node = j.next
+            j.next = i
+            i = j
+            j = next_node
+        return i
+
+    def reverseList3(self, head: ListNode) -> ListNode:
+
+
+if __name__ == "__main__":
+    nums = [1, 2, 3, 4, 5]
     listnode = separatedList.SinglyList(nums)
     listnode.show_singly_list()
     solution = Solution()
-    node = solution.reverseList(listnode.head)
+    node = solution.reverseList4(listnode.head)
     while node:
-        print(node.val, end= '->')
+        print(node.val, end="->")
         node = node.next
