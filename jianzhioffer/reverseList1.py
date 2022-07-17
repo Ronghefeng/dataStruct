@@ -71,8 +71,6 @@ class Solution:
             j = next_node
         return i
 
-    def reverseList3(self, head: ListNode) -> ListNode:
-
 
 if __name__ == "__main__":
     nums = [1, 2, 3, 4, 5]
